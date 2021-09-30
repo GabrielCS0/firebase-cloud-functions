@@ -1,4 +1,5 @@
 import * as functions from "firebase-functions";
+import "express-async-errors";
 import * as express from "express";
 import {router} from "./routes";
 
