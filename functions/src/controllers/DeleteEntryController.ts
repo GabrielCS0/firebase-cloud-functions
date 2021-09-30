@@ -7,6 +7,9 @@ export class DeleteEntryController {
 
     const entry = db.collection("entries").doc(entryId);
 
+    const doc = await entry.get();
+    if (!doc.exists) throw new Error("This entry does not exist.");
+
     await entry.delete().catch((err) => {
       throw new Error(err.message);
     });

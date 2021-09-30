@@ -9,6 +9,7 @@ export class UpdateEntryController {
     const currentEntryData = (await entry.get()).data() || {};
 
     const entryObject = {
+      id: entry.id,
       title: title || currentEntryData.title,
       text: text || currentEntryData.text,
     };
